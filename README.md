@@ -4,7 +4,6 @@ Each person will focus on a general area to work on the project:
 - Making the AI to play agaisnt (maybe have multiple difficulties)
 - Making a scoring system that stores to a file (for saving information even when the program ends)
 - Carrying out testing with each potential input
-- 
 
 I want to have a prototype UI :	1
 Ability to play against AI :	2
