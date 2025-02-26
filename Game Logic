@@ -25,4 +25,3 @@ while run:
         if event.type == pygame.quit:
             run = False
             pygame.quit()
-            
