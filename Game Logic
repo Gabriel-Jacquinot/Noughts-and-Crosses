@@ -1,19 +1,28 @@
+
 import pygame
 
 pygame.init()
 
-width, height = 800, 800
-window = pygame.display.set_mode((width, height))
-window.fill("white")
-pygame.display.set_caption("Noughts and Crosses")
+width, height = 1200, 800
+screen = pygame.display.set_mode((width, height))
+pygame.display.set_caption('Noughts & Crosses')
+
+def grid():
+    bg = (97, 127, 207)
+    grid_lines = (255, 255, 255)
+    screen.fill(bg)
+    for x in range(1,3):
+         #vertical lines
+        pygame.draw.line(screen, grid_lines, (300,700), (300,100))
+        pygame.draw.line(screen, grid_lines, (500,700), (500,100))
+         #horizontal lines
+        pygame.draw.line(screen, grid_lines, (100,300), (700,300))
+        pygame.draw.line(screen, grid_lines, (100,500), (700,500))
 
 run = True
-while run is True:
-    for events in pygame.event.get():
-        if events.type == pygame.QUIT:
+while run:
+    for event in pygame.event.get():
+        if event.type == pygame.quit:
             run = False
+            pygame.quit()
             
-    pygame.display.update()
-    pygame.display.flip()
-    
-pygame.quit()
