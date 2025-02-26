@@ -5,6 +5,7 @@ pygame.init()
 width, height = 800, 800
 window = pygame.display.set_mode((width, height))
 window.fill("white")
+pygame.display.set_caption("Noughts and Crosses")
 
 run = True
 while run is True:
