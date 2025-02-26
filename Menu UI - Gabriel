@@ -1,3 +1,7 @@
+################################################################################################################################################################
+### Feel free to copy the way I made the buttons if it makes sense, you don't have to use classes though, it can just be a seperate function for each button ###
+################################################################################################################################################################
+
 import pygame # Getting all the functions that come with the pygame library, without this the pygame functions we use would not work
 
 pygame.init() # This just makes all the functions you call work properly by initialsing them
