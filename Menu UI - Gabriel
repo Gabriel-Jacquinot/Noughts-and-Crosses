@@ -1,7 +1,3 @@
-################################################################################################################################################################
-### Feel free to copy the way I made the buttons if it makes sense, you don't have to use classes though, it can just be a seperate function for each button ###
-################################################################################################################################################################
-
 import pygame # Getting all the functions that come with the pygame library, without this the pygame functions we use would not work
 
 pygame.init() # This just makes all the functions you call work properly by initialsing them
@@ -48,6 +44,9 @@ while run is True: # This is the game loop, so anything that happens here will u
         if events.type == pygame.MOUSEBUTTONDOWN: # Checking for any mouse clicks at all
             if quitButton.rect.collidepoint(pos): # Checking if this click is on the quit button or not by matching it to mouse coordinates
                 run = False # Ends the game loop and thefore the program
+            if playLocalButton.rect.collidepoint(pos):
+                print("Loading Game...")
+                print("Work in progress")
             
     pygame.display.update() # This is constantly refreshing the game during the loop to make any changes or else the display would not update
     
