@@ -13,6 +13,8 @@ pygame.display.set_icon(logo) # This puts the logo image in the top left
 clock = pygame.time.Clock() # Getting the current time so a tick rate can be set later (for game FPS)
 fps = 60
 
+print("Hello")
+
 class button: # Making a class for any button that gets made so that you can very easily make multiple by just inputing the properties you want it to have
     def __init__(self, font, size, text, boolean, bgColour, textColour, posx, posy, length, width): # This is a placeholder which will be different for each button, enter a set of values for each variable to make a button
         self.font = pygame.font.SysFont(font, int(size)) # Setting a font for the button
