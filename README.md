@@ -1,3 +1,5 @@
+This branch is basically for me to work on the game menu so that everyone else can work on other stuff at the same time. It will then be merged back into the main file when it has been tested and we can all have a python file each which we can then link up hopefully.
+
 Each person will focus on a general area to work on the project:
 - Making the specifics of the GUI (like creating the menu determing local play or play against AI)
 - Making the game logic for noughts and crosses (playing the game basically)
