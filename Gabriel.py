@@ -13,24 +13,24 @@ pygame.display.set_icon(logo) # This puts the logo image in the top left
 clock = pygame.time.Clock() # Getting the current time so a tick rate can be set later (for game FPS)
 fps = 60
 
-print("Hello")
-
 class button: # Making a class for any button that gets made so that you can very easily make multiple by just inputing the properties you want it to have
-    def __init__(self, font, size, text, boolean, bgColour, textColour, posx, posy, length, width): # This is a placeholder which will be different for each button, enter a set of values for each variable to make a button
-        self.font = pygame.font.SysFont(font, int(size)) # Setting a font for the button
+    def __init__(self, font, size, boolean1, text, boolean2, bgColour, textColour, posx, posy, length, width): # This is a placeholder which will be different for each button, enter a set of values for each variable to make a button
+        self.font = pygame.font.SysFont(font, int(size), bool(boolean1)) # Setting a font for the button
         self.textColour = pygame.Color(textColour) # Setting a text colour
-        self.text = self.font.render(text, bool(boolean), pygame.Color(textColour)) # Set the text for the button and its colour
+        self.text = self.font.render(text, bool(boolean2), pygame.Color(textColour)) # Set the text for the button and its colour
         self.rect = pygame.Rect(int(posx), int(posy), int(length), int(width)) # Draw the clickable button which is a rectangle (pygame.Rect)
         self.colour = pygame.Color(bgColour) # The background colour of the button
-    
+
     def make_button(self, window): # The __init__ function is just establishing the variables in terms of pygame and this function actually makes a new buton using those
-        pygame.draw.rect(window, self.colour, self.rect) # Draw the outside rectangle which the clickable rectanlge will be inside
+        pygame.draw.rect(window, self.colour, self.rect, width = 1) # Draw the outside rectangle which the clickable rectanlge will be inside
         window.blit(self.text, (self.rect.x + 10, self.rect.y + 10)) # This is where both the clickable button rectangle and the actual text and background rectangle are combined into one object
 
 # Buttons which can be made and their properties
-playLocal = ["Arial", 40, "Local Play", True, "black", "white", 320, 30, 170, 65] # change the last two numbers for the button length and width and the two numbers before for x, y position from the top left corner
+playLocal = ["Aptos", 60, False, "Play a Friend", True, "black", "black", 15, 100, 285, 60] # change the last two numbers for the button length and width and the two numbers before for x, y position from the top left corner
 playLocalButton = button(*playLocal) # Sending all of the values (*) into the button class to make a new button
-quit = ["Arial", 40, "Quit", True, "red", "black", 15, 720, 90, 65] 
+playComputer = ["Aptos", 60, False, "Play the Computer", True, "black", "black", 15, 30, 400, 60] # change the last two numbers for the button length and width and the two numbers before for x, y position from the top left corner
+playComputerButton = button(*playComputer) # Sending all of the values (*) into the button class to make a new button
+quit = ["Aptos", 60, False, "Quit", True, "red", "black", 15, 170, 120, 60] 
 quitButton = button(*quit)
  
 run = True # So that game is always playing on program startup
@@ -38,6 +38,7 @@ while run is True: # This is the game loop, so anything that happens here will u
     # Making the buttons
     quitButton.make_button(window) # Actually making the button now and putting it on the window
     playLocalButton.make_button(window)
+    playComputerButton.make_button(window)
     pos_x, pos_y = pygame.mouse.get_pos() # Assigning the active position of the users mouse under x and y variables
     pos = pygame.mouse.get_pos() # Mouse positions under one variable for ease of use later
     for events in pygame.event.get(): # This is where the program is checking for any changes that are made by the user such as keyboard and mouse inputs
