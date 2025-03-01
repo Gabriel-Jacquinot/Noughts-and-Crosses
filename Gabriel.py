@@ -3,7 +3,7 @@ import pygame # Getting all the functions that come with the pygame library, wit
 pygame.init() # This just makes all the functions you call work properly by initialsing them
 
 WIDTH, HEIGHT = 800, 600 # The width and height that the display will be set to
-logo = pygame.image.load("icons8-tic-tac-toe-67.png") # Loading the named image file and assigning it to a variable
+logo = pygame.image.load("logo.png") # Loading the named image file and assigning it to a variable
 menu_logo = pygame.transform.smoothscale(logo, (768, 768))
 
 window = pygame.display.set_mode((WIDTH, HEIGHT)) # Initialising the display as window, with a width and height
