@@ -35,9 +35,18 @@ while run is True: # This is the game loop, so anything that happens here will u
             if quit_button.rect.collidepoint(pos): # Checking if this click is on the quit button or not by matching it to mouse coordinates
                 run = False # Ends the game loop and thefore the program
             if play_local_button.rect.collidepoint(pos):
-                print("Loading Game...")
-                print("Work in progress")
-            
+                print("Loading Local Game...")
+            if play_computer_button.rect.collidepoint(pos):
+                print("Loading Computer Game...")
+                
+    play_computer_button.button_hover(pos)                   
+    play_local_button.button_hover(pos)
+    quit_button.button_hover(pos)
+    
+    play_computer_button.make_button(window)
+    play_local_button.make_button(window)
+    quit_button.make_button(window)
+                  
     pygame.display.update() # This is constantly refreshing the game during the loop to make any changes or else the display would not update
     
     clock.tick(fps) # Establishing the tick rate or fps of the game
