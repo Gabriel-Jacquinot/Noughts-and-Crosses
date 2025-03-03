@@ -23,14 +23,21 @@ click = False
 position = []
 spaces = []
 
+for x in range(3):
+    row = [0]*3
+    spaces.append(row)
+
+print(spaces)
+
+run = True
 while run:
     for event in pygame.event.get():
         if event.type == pygame.quit:
             run = False
             pygame.quit()
-        elif event.type == pygame.MOUSEBUTTONDOWN AND click = False:
+        elif event.type == pygame.MOUSEBUTTONDOWN and click == False:
             click = True
-        elif event.type == pygame.MOUSEBUTTONUP AND click = True:
+            pygame.mouse.get_pos()
+        elif event.type == pygame.MOUSEBUTTONUP and click == True:
             click = False
-        pygame.display.update()
-
+        pygame.display.update
