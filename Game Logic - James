@@ -29,12 +29,23 @@ for x in range(3):
 
 print(spaces)
 
+topleft = pygame.rect(100,500,200,200)
+topmid = pygame.rect(300,500,200,200)
+topright = pygame.rect(500,500,200,200)
+midleft = pygame.rect(100,300,200,200)
+mid = pygame.rect(300,300,200,200)
+midright = pygame.rect(500,300,200,200)
+botleft = pygame.rect(100,100,200,200)
+botmid = pygame.rect(300,100,200,200)
+botright = pygame.rect(500,100,200,200)
+
 run = True
 while run:
     for event in pygame.event.get():
         if event.type == pygame.quit:
             run = False
             pygame.quit()
+            sys.exit()
         elif event.type == pygame.MOUSEBUTTONDOWN and click == False:
             click = True
             pygame.mouse.get_pos()
