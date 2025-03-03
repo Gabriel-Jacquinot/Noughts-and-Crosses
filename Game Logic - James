@@ -19,8 +19,18 @@ def grid():
         pygame.draw.line(screen, grid_lines, (100,500), (700,500))
 
 run = True
+click = False
+position = []
+spaces = []
+
 while run:
     for event in pygame.event.get():
         if event.type == pygame.quit:
             run = False
             pygame.quit()
+        elif event.type == pygame.MOUSEBUTTONDOWN AND click = False:
+            click = True
+        elif event.type == pygame.MOUSEBUTTONUP AND click = True:
+            click = False
+        pygame.display.update()
+
