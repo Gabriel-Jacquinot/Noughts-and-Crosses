@@ -1,3 +1,6 @@
+#FIRST PLAYER WILL USE CROSSES
+#SECOND PLAYER WILL USE NOUGHTS
+
 import pygame
 
 pygame.init()
@@ -22,6 +25,7 @@ run = True
 click = False
 position = []
 spaces = []
+turn = p1
 
 for x in range(3):
     row = [0]*3
@@ -46,9 +50,10 @@ while run:
             run = False
             pygame.quit()
             sys.exit()
-        elif event.type == pygame.MOUSEBUTTONDOWN and click == False:
-            click = True
-            pygame.mouse.get_pos()
-        elif event.type == pygame.MOUSEBUTTONUP and click == True:
-            click = False
-        pygame.display.update
+        while turn == p1:
+            if event.type == pygame.MOUSEBUTTONDOWN and click == False:
+                click = True
+                pygame.mouse.get_pos()
+            elif event.type == pygame.MOUSEBUTTONUP and click == True:
+                click = False
+            pygame.display.update
