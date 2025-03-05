@@ -49,6 +49,29 @@ botleft = pygame.rect(100,100,200,200)
 botmid = pygame.rect(300,100,200,200)
 botright = pygame.rect(500,100,200,200)
 
+def check_winner():
+    y_pos = 0
+    for x in spaces:
+        if sum(x) == 3:     #columns
+            winner = 'p1'
+            end_game = True
+        if sum(x) == -3:
+            winner = 'p2'
+            end_game = True
+        if spaces[0][y_pos] + spaces[1][y_pos] + spaces[2][y_pos] == 3:     #rows
+            winner = 'p1'
+            end_game = True
+        if spaces[0][y_pos] + spaces[1][y_pos] + spaces[2][y_pos] == -3:
+            winner = 'p2'
+            end_game = True
+        y_pos += 1
+    if spaces[0][0] + spaces[1][1] + spaces[2][2] == 3 or spaces[2][0] + spaces[1][1] + spaces [0][2] == 3:
+        winner = 'p1'
+        end_game = True
+    if spaces[0][0] + spaces[1][1] + spaces[2][2] == -3 or spaces[2][0] + spaces[1][1] + spaces [0][2] == -3:
+        winner = 'p2'
+        end_game = True
+        
 run = True
 while run:
     for event in pygame.event.get():
@@ -116,26 +139,3 @@ while run:
             pygame.display.update
             check_winner()
             turn = 'p1'
-
-def check_winner():
-    y_pos = 0
-    for x in spaces:
-        if sum(x) == 3:     #columns
-            winner = 'p1'
-            end_game = True
-        if sum(x) == -3:
-            winner = 'p2'
-            end_game = True
-        if spaces[0][y_pos] + spaces[1][y_pos] + spaces[2][y_pos] == 3:     #rows
-            winner = 'p1'
-            end_game = True
-        if spaces[0][y_pos] + spaces[1][y_pos] + spaces[2][y_pos] == -3:
-            winner = 'p2'
-            end_game = True
-        y_pos += 1
-    if spaces[0][0] + spaces[1][1] + spaces[2][2] == 3 or spaces[2][0] + spaces[1][1] + spaces [0][2] == 3:
-        winner = 'p1'
-        end_game = True
-    if spaces[0][0] + spaces[1][1] + spaces[2][2] == -3 or spaces[2][0] + spaces[1][1] + spaces [0][2] == -3:
-        winner = 'p2'
-        end_game = True
