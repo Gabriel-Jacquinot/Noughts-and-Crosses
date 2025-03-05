@@ -61,23 +61,23 @@ while run:
                 position.append(x,y)
                 if spaces[x][y] == 0:
                     if topleft.collidepoint(position):
-                        row[0][0] = 1 and pygame.surface.blit(cross, position)
-                    if midright.collidepoint(position):
-                        row[0][1] = 1 and pygame.surface.blit(cross, position)
+                        row[0][0] = 1 and pygame.surface.blit(cross, (100,500))
                     if topright.collidepoint(position):
-                        row[0][2] = 1 and pygame.surface.blit(cross, position)
+                        row[0][1] = 1 and pygame.surface.blit(cross, (300,500))
+                    if topright.collidepoint(position):
+                        row[0][2] = 1 and pygame.surface.blit(cross, (500,500))
                     if midleft.collidepoint(position):
-                        row[1][0] = 1 and pygame.surface.blit(cross, position)
+                        row[1][0] = 1 and pygame.surface.blit(cross, (100,300))
                     if mid.collidepoint(position):
-                        row[1][1] = 1 and pygame.surface.blit(cross, position)
+                        row[1][1] = 1 and pygame.surface.blit(cross, (300,300))
                     if midright.collidepoint(position):
-                        row[1][2] = 1 and pygame.surface.blit(cross, position)
+                        row[1][2] = 1 and pygame.surface.blit(cross, (500,300))
                     if botleft.collidepoint(position):
-                        row[2][0] = 1 and pygame.surface.blit(cross, position)
+                        row[2][0] = 1 and pygame.surface.blit(cross, (100,100))
                     if botmid.collidepoint(position):
-                        row[2][1] = 1 and pygame.surface.blit(cross, position)
+                        row[2][1] = 1 and pygame.surface.blit(cross, (300,100))
                     if botright.collidepoint(position):
-                        row[2][2] = 1 and pygame.surface.blit(cross,position)
+                        row[2][2] = 1 and pygame.surface.blit(cross, (500,100))
                 position.clear() 
             elif event.type == pygame.MOUSEBUTTONUP and click == True:
                 click = False
@@ -90,24 +90,25 @@ while run:
                 position.append(x,y)
                 if spaces[x][y] == 0:
                     if topleft.collidepoint(position):
-                        row[0][0] = 1 and pygame.surface.blit(nought, position)
+                        row[0][0] = 1 and pygame.surface.blit(nought, (100,500))
                     if midright.collidepoint(position):
-                        row[0][1] = 1 and pygame.surface.blit(nought, position)
+                        row[0][1] = 1 and pygame.surface.blit(nought, (300,500))
                     if topright.collidepoint(position):
-                        row[0][2] = 1 and pygame.surface.blit(nought, position)
+                        row[0][2] = 1 and pygame.surface.blit(nought, (500,500))
                     if midleft.collidepoint(position):
-                        row[1][0] = 1 and pygame.surface.blit(nought, position)
+                        row[1][0] = 1 and pygame.surface.blit(nought, (100,300))
                     if mid.collidepoint(position):
-                        row[1][1] = 1 and pygame.surface.blit(nought, position)
+                        row[1][1] = 1 and pygame.surface.blit(nought, (300,300))
                     if midright.collidepoint(position):
-                        row[1][2] = 1 and pygame.surface.blit(nought, position)
+                        row[1][2] = 1 and pygame.surface.blit(nought, (500,300))
                     if botleft.collidepoint(position):
-                        row[2][0] = 1 and pygame.surface.blit(nought, position)
+                        row[2][0] = 1 and pygame.surface.blit(nought, (100,100))
                     if botmid.collidepoint(position):
-                        row[2][1] = 1 and pygame.surface.blit(nought, position)
+                        row[2][1] = 1 and pygame.surface.blit(nought, (300,100))
                     if botright.collidepoint(position):
-                        row[2][2] = 1 and pygame.surface.blit(nought, position)
+                        row[2][2] = 1 and pygame.surface.blit(nought, (500,100))
                 position.clear() 
             elif event.type == pygame.MOUSEBUTTONUP and click == True:
                 click = False
             pygame.display.update
+            turn = 'p1'
