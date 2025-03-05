@@ -26,7 +26,9 @@ click = False
 position = []
 spaces = []
 turn = p1      #p1 = first player (crosses)
-cross = pygame.image.load(White_Cross.png)
+cross = pygame.image.load('White_Cross.png')
+pygame.Surface.convert_alpha()
+nought = pygame.image.load('White_Nought.png')
 pygame.Surface.convert_alpha()
 
 for x in range(3):
@@ -52,12 +54,25 @@ while run:
             run = False
             pygame.quit()
             sys.exit()
-        while turn == p1:   
+        while turn == 'p1':   
             if event.type == pygame.MOUSEBUTTONDOWN and click == False:
                 click = True
                 x,y = pygame.mouse.get_pos()
                 position.append(x,y)
                 pygame.surface.blit(cross, position)
+                position.clear() 
+            elif event.type == pygame.MOUSEBUTTONUP and click == True:
+                click = False
+            pygame.display.update
+            turn = 'p2'
+        while turn == 'p2':
+            if event.type == pygame.MOUSEBUTTONDOWN and click == False:
+                click = True
+                x,y = pygame.mouse.get_pos()
+                position.append(x,y)
+                pygame.surface.blit(nought, position)
+                if topright.collidepoint(position):
+                    row[0] = 1
                 position.clear() 
             elif event.type == pygame.MOUSEBUTTONUP and click == True:
                 click = False
