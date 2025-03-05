@@ -8,7 +8,7 @@ pygame.init() # This just makes all the functions you call work properly by init
 
 # Variables for window
 WIDTH, HEIGHT = 800, 600 # The width and height that the display will be set to
-logo = pygame.image.load("logo.png") # Loading the named image file and assigning it to a variable
+logo = pygame.image.load("logo.png") # Loading the named image file and assigning it to a variable5
 menu_logo = pygame.transform.smoothscale(logo, (768, 768))
 FPS = 60
 
@@ -43,17 +43,22 @@ class Program:
                 if event.type == pygame.MOUSEBUTTONDOWN: # Checking for any mouse clicks at all
                     if current_state == "menu":
                         self.menu.handle_click(event.pos)
+                    if current_state == "play_comp":
+                        self.game_comp.handle_click(event.pos)
+                    if current_state == "play_local":
+                        self.game_local.handle_click(event.pos)
+                    
                 if event.type == pygame.KEYDOWN:
-                    if event.key == pygame.K_RETURN:
+                    if event.key == pygame.K_ESCAPE:
                         print("Loading Menu")
                         self.gameStateManager.set_state("menu")
                     
             if current_state == "menu":
                 self.menu.run()
             elif current_state == "play_local":
-                self.game_local.run()
+                self.game_local.run(self.window, WIDTH, HEIGHT)
             elif current_state == "play_comp":
-                self.game_comp.run()
+                self.game_comp.run(self.window, WIDTH, HEIGHT)
                 
             # Add other calls for game aspects like playing the computer here #
                         

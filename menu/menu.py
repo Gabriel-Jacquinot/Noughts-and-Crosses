@@ -30,7 +30,7 @@ class Menu:
         self.window.fill((52, 78, 91)) # Background colour of the program
         self.play_local_button, self.play_computer_button, self.quit_button = create_menu(self.window, 800, 600)
         
-        draw_text(self.window, "Noughts and Crosses", font, "white", (800 / 2) - (47 * 25 / 2) / 2, (600 // 2) - 260)
+        draw_text(self.window, "Noughts and Crosses", font, "white", (800 / 2) - (47 * 25 / 2) / 2, (600 // 2) - 275)
         
         # Get mouse position
         pos = pygame.mouse.get_pos()
