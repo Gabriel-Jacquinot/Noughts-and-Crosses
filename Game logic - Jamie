@@ -1,5 +1,5 @@
 import pygame
-from pygame.locals import * 
+from pygame.locals import *
 
 
 pygame.init()
@@ -10,11 +10,12 @@ screen_height = 300
 
 screen = pygame.display.set_mode((screen_width, screen_height))
 pygame.display.set_caption("TicTacToe")
-clock = pygame.time.Clock
+clock = pygame.time.Clock()
 
 line_width = 5
 markers = []
-
+clicked = False
+pos = []
 
 def drawGrid():
   bg = (255, 255, 200)
@@ -33,9 +34,9 @@ print(markers)
 
 run = True
 while run:
-  
+
   drawGrid()
-  
+
   for event in pygame.event.get():
     if event.type == pygame.QUIT:
       run = False
@@ -43,10 +44,9 @@ while run:
       clicked = True
     if event.type == pygame.MOUSEBUTTONUP and clicked == True:
       clicked = False
-
+      pos = pygame.mouse.get_pos()
 
   pygame.display.update
   clock.tick(60)
 
 pygame.quit()
-
