@@ -1,3 +1,6 @@
+#FIRST PLAYER WILL USE CROSSES
+#SECOND PLAYER WILL USE NOUGHTS
+
 import pygame
 
 pygame.init()
@@ -19,8 +22,40 @@ def grid():
         pygame.draw.line(screen, grid_lines, (100,500), (700,500))
 
 run = True
+click = False
+position = []
+spaces = []
+turn = p1      #p1 = first player (crosses)
+
+for x in range(3):
+    row = [0]*3
+    spaces.append(row)
+
+print(spaces)
+
+topleft = pygame.rect(100,500,200,200)
+topmid = pygame.rect(300,500,200,200)
+topright = pygame.rect(500,500,200,200)
+midleft = pygame.rect(100,300,200,200)
+mid = pygame.rect(300,300,200,200)
+midright = pygame.rect(500,300,200,200)
+botleft = pygame.rect(100,100,200,200)
+botmid = pygame.rect(300,100,200,200)
+botright = pygame.rect(500,100,200,200)
+
+run = True
 while run:
     for event in pygame.event.get():
         if event.type == pygame.quit:
             run = False
             pygame.quit()
+            sys.exit()
+        while turn == p1:   
+            if event.type == pygame.MOUSEBUTTONDOWN and click == False:
+                click = True
+                pygame.mouse.get_pos()
+                pygame.image.load(White_Cross.png)
+                pygame.Surface.convert_alpha()
+            elif event.type == pygame.MOUSEBUTTONUP and click == True:
+                click = False
+            pygame.display.update
