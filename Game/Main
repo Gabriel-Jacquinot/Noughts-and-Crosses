@@ -86,14 +86,12 @@ def win_screen(winner):
     screen.blit(win_img, (300,300))
 
 #BUTTONS
-pygame.draw.rect(screen, (151, 164, 186), [910, 490, 190, 150], border_radius = 15)     #Play Again
-pygame.draw.rect(screen, (255,255,255), [900, 480, 200, 160], border_radius = 15)     
+pygame.draw.rect(screen, (151, 164, 186), [900, 480, 200, 160], width = 10, border_radius = 15)     #Play Again
 again_text = 'Play again'
 again_img = font.render(again_text, True, (255,255,255))
 screen.blit(again_img, (1000, 500))
 
-pygame.draw.rect(screen, (151, 164, 186), [910, 1700, 190, 150], border_radius = 15)     #Return to menu
-pygame.draw.rect(screen, (151, 164, 186), [900, 160, 200, 160], border_radius = 15)     
+pygame.draw.rect(screen, (151, 164, 186), [900, 160, 200, 160], width = 10, border_radius = 15)     #Return to menu
 return_text = 'Return to menu'
 return_img = font.render(return_text, True, (255,255,255))
 screen.blit(return_img, (1000, 180))
