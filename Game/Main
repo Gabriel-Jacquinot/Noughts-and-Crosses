@@ -82,16 +82,16 @@ def check_winner():
 def win_screen(winner):
     win_text = 'Player ' +str(winner)+ ' wins!'
     win_img = font.render(win_text, True, (255,255,255))
-    pygame.draw.rect(screen, (151, 164, 186), [200, 200, 400, 400])
+    pygame.draw.rect(screen, (151, 164, 186), [200, 200, 400, 400], border_radius = 15)
     screen.blit(win_img, (300,300))
 
 #BUTTONS
-pygame.draw.rect(screen, (151, 164, 186), [900, 480, 200, 160])     #Play Again
+pygame.draw.rect(screen, (151, 164, 186), [900, 480, 200, 160], border_radius = 15)     #Play Again
 again_text = 'Play again'
 again_img = font.render(again_text, True, (255,255,255))
 screen.blit(again_img, (1000, 500))
 
-pygame.draw.rect(screen, (151, 164, 186), [900, 160, 200, 160])     #Return to menu
+pygame.draw.rect(screen, (151, 164, 186), [900, 160, 200, 160], border_radius = 15)     #Return to menu
 return_text = 'Return to menu'
 return_img = font.render(return_text, True, (255,255,255))
 screen.blit(return_img, (1000, 180))
