@@ -90,6 +90,7 @@ pygame.draw.rect(screen, (151, 164, 186), [900, 480, 200, 160])     #Play Again
 again_text = 'Play again'
 again_img = font.render(again_text, True, (255,255,255))
 screen.blit(again_img, (1000, 500))
+
 pygame.draw.rect(screen, (151, 164, 186), [900, 160, 200, 160])     #Return to menu
 return_text = 'Return to menu'
 return_img = font.render(return_text, True, (255,255,255))
