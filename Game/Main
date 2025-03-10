@@ -56,14 +56,14 @@ botright = pygame.rect(500,100,200,200)
 def check_winner():
     y_pos = 0
     for x in spaces:
-        #columns
+        #COLUMNS
         if sum(x) == 3:     
             winner = 'p1'
             end_game = True
         if sum(x) == -3:
             winner = 'p2'
             end_game = True
-        #rows
+        #ROWS
         if spaces[0][y_pos] + spaces[1][y_pos] + spaces[2][y_pos] == 3:     
             winner = 'p1'
             end_game = True
@@ -71,7 +71,7 @@ def check_winner():
             winner = 'p2'
             end_game = True
         y_pos += 1
-    #diagonal
+    #DIAGONAL
     if spaces[0][0] + spaces[1][1] + spaces[2][2] == 3 or spaces[2][0] + spaces[1][1] + spaces [0][2] == 3:
         winner = 'p1'
         end_game = True
@@ -84,6 +84,16 @@ def win_screen(winner):
     win_img = font.render(win_text, True, (255,255,255))
     pygame.draw.rect(screen, (151, 164, 186), [200, 200, 400, 400])
     screen.blit(win_img, (300,300))
+
+#BUTTONS
+pygame.draw.rect(screen, (151, 164, 186), [900, 480, 200, 160])     #Play Again
+again_text = 'Play again'
+again_img = font.render(again_text, True, (255,255,255))
+screen.blit(again_img, (1000, 500))
+pygame.draw.rect(screen, (151, 164, 186), [900, 160, 200, 160])     #Return to menu
+return_text = 'Return to menu'
+return_img = font.render(return_text, True, (255,255,255))
+screen.blit(return_img, (1000, 180))
 
 while run == True:
     while end_game == False:
