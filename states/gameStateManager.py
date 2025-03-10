@@ -6,5 +6,4 @@ class GameStateManager:
         return self.current_state
     
     def set_state(self, state):
-        print(f"State changing from {self.current_state} to {state}")
         self.current_state = state

@@ -50,7 +50,6 @@ class Program:
                     
                 if event.type == pygame.KEYDOWN:
                     if event.key == pygame.K_ESCAPE:
-                        print("Loading Menu")
                         self.gameStateManager.set_state("menu")
                     
             if current_state == "menu":

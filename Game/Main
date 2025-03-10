@@ -2,6 +2,7 @@
 #SECOND PLAYER WILL USE NOUGHTS
 
 import pygame
+import sys
 
 pygame.init()
 
@@ -27,11 +28,11 @@ click = False
 winner = 0
 position = []
 spaces = []
-turn = p1      #p1 = first player (crosses)
+turn = 'p1'      #p1 = first player (crosses)
 cross = pygame.image.load('White_Cross.png')
-pygame.Surface.convert_alpha()
+# pygame.Surface.convert_alpha()
 nought = pygame.image.load('White_Nought.png')
-pygame.Surface.convert_alpha()
+#  pygame.Surface.convert_alpha()
 
 for x in range(3):
     row = [0]*3
@@ -49,7 +50,7 @@ botleft = pygame.rect(100,100,200,200)
 botmid = pygame.rect(300,100,200,200)
 botright = pygame.rect(500,100,200,200)
 
-def check_winner():
+def check_winner(winner, end_game, click):
     y_pos = 0
     for x in spaces:
         if sum(x) == 3:     #columns
@@ -107,7 +108,7 @@ while run:
             elif event.type == pygame.MOUSEBUTTONUP and click == True:
                 click = False
             pygame.display.update
-            check_winner()
+            check_winner(winner, end_game, click)
             turn = 'p2'
         while turn == 'p2':
             if event.type == pygame.MOUSEBUTTONDOWN and click == False:
@@ -137,5 +138,5 @@ while run:
             elif event.type == pygame.MOUSEBUTTONUP and click == True:
                 click = False
             pygame.display.update
-            check_winner()
+            check_winner(winner, end_game, click)
             turn = 'p1'
