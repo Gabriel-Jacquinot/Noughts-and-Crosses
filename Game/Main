@@ -102,11 +102,10 @@ def menu():
     return_img = font.render(return_text, True, (255,255,255))
     screen.blit(return_img, (843, 215))
 
-
+grid()
+menu()
 while run == True:
     while end_game == False:
-        grid()
-        menu()
         for event in pygame.event.get():
             pygame.display.update()
             if event.type == pygame.QUIT:
@@ -120,40 +119,40 @@ while run == True:
                     position.append(x)
                     position.append(y)
                     if topleft.collidepoint(position):
-                        pygame.Surface.blit(screen, cross, (100,100))
                         if spaces[0][0] == 0:
+                            pygame.Surface.blit(screen, cross, (110,110))
                             spaces[0][0] = 1 
                     if topmid.collidepoint(position):
-                        pygame.Surface.blit(screen, cross, (300,100))
                         if spaces[0][1] == 0:
+                            pygame.Surface.blit(screen, cross, (310,110))
                             spaces[0][1] = 1 
                     if topright.collidepoint(position):
-                        pygame.Surface.blit(screen, cross, (500,100))
                         if spaces[0][2] == 0:
+                            pygame.Surface.blit(screen, cross, (510,110))
                             spaces[0][2] = 1 
                     if midleft.collidepoint(position):
-                        pygame.Surface.blit(screen, cross, (100,300))
                         if spaces[1][0] == 0:
+                            pygame.Surface.blit(screen, cross, (110,310))
                             spaces[1][0] = 1 
                     if mid.collidepoint(position):
-                        pygame.Surface.blit(screen, cross, (300,300))
                         if spaces[1][1] == 0:
+                            pygame.Surface.blit(screen, cross, (310,310))
                             spaces[1][1] = 1 
                     if midright.collidepoint(position):
-                        pygame.Surface.blit(screen, cross, (500,300))
                         if spaces[1][2] == 0:
+                            pygame.Surface.blit(screen, cross, (510,310))
                             spaces[1][2] = 1 
                     if botleft.collidepoint(position):
-                        pygame.Surface.blit(screen, cross, (100,500))
                         if spaces[2][0] == 0:
+                            pygame.Surface.blit(screen, cross, (110,510))
                             spaces[2][0] = 1 
                     if botmid.collidepoint(position):
-                        pygame.Surface.blit(screen, cross, (300,500))
                         if spaces[2][1] == 0:
+                            pygame.Surface.blit(screen, cross, (310,510))
                             spaces[2][1] = 1 
                     if botright.collidepoint(position):
-                        pygame.Surface.blit(screen, cross, (500,500))
                         if spaces[2][2] == 0:
+                            pygame.Surface.blit(screen, cross, (510,510))
                             spaces[2][2] = 1 
                     position.clear() 
                     turn = 'p2'
@@ -171,40 +170,40 @@ while run == True:
                     position.append(x)
                     position.append(y)
                     if topleft.collidepoint(position):
-                        pygame.Surface.blit(screen, nought, (100,500))
                         if spaces[0][0] == 0:
+                            pygame.Surface.blit(screen, nought, (110,110))
                             spaces[0][0] = -1 
                     if topmid.collidepoint(position):
-                        pygame.Surface.blit(screen, nought, (300,500))
                         if spaces[0][1] == 0:
+                            pygame.Surface.blit(screen, nought, (310,110))
                             spaces[0][1] = -1 
                     if topright.collidepoint(position):
-                        pygame.Surface.blit(screen, nought, (500,500))
                         if spaces[0][2] == 0:
+                            pygame.Surface.blit(screen, nought, (510,110))
                             spaces[0][2] = -1 
                     if midleft.collidepoint(position):
-                        pygame.Surface.blit(screen, nought, (100,300))
                         if spaces[1][0] == 0:
+                            pygame.Surface.blit(screen, nought, (110,310))
                             spaces[1][0] = -1 
                     if mid.collidepoint(position):
-                        pygame.Surface.blit(screen, nought, (300,300))
                         if spaces[1][1] == 0:
+                            pygame.Surface.blit(screen, nought, (310,310))
                             spaces[1][1] = -1 
                     if midright.collidepoint(position):
-                        pygame.Surface.blit(screen, nought, (500,300))
                         if spaces[1][2] == 0:
+                            pygame.Surface.blit(screen, nought, (510,310))
                             spaces[1][2] = -1 
                     if botleft.collidepoint(position):
-                        pygame.Surface.blit(screen, nought, (100,100))
                         if spaces[2][0] == 0:
-                         spaces[2][0] = -1 
+                            pygame.Surface.blit(screen, nought, (110,510))
+                            spaces[2][0] = -1 
                     if botmid.collidepoint(position):
-                        pygame.Surface.blit(screen, nought, (300,100))
                         if spaces[2][1] == 0:
+                            pygame.Surface.blit(screen, nought, (310,510))
                             spaces[2][1] = -1 
                     if botright.collidepoint(position):
-                        pygame.Surface.blit(screen, nought, (500,100))
                         if spaces[2][2] == 0:
+                            pygame.Surface.blit(screen, nought, (510,510))
                             spaces[2][2] = -1 
                     position.clear() 
                     turn = 'p1'
