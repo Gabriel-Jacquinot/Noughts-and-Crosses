@@ -29,11 +29,6 @@ class GameComp:
         self.quit_button.make_button(window)
         self.menu_button.make_button(window)
         
-        # Making the grid properties
-        pygame.draw.rect(window, (0, 139, 139), ((WIDTH / 2) - (450 / 2), (HEIGHT / 2) - 140, 450, 400))
-        # for i in range(2):
-        #     pygame.draw.line(window, (255, 255, 255), ((WIDTH / 2) - (450 / 2)), (((HEIGHT / 2) - 140) / 3))
-        
     def handle_click(self, pos):
         if self.quit_button.rect.collidepoint(pos): # Checking if this click is on the quit button or not by matching it to mouse coordinates
             pygame.quit()
