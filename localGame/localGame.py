@@ -7,7 +7,7 @@ class GameLocal:
        self.gameStateManager = gameStateManager
        
     def run(self, window, WIDTH, HEIGHT): 
-        self.window.fill((52, 78, 91))
+        self.window.fill((112, 137, 156))
         pos = pygame.mouse.get_pos()
         
         font = pygame.font.SysFont("Calibri", 52)
@@ -15,12 +15,13 @@ class GameLocal:
         colour = "white"
         x, y = (WIDTH / 2) - 210, 35
 
+        pygame.draw.rect(window, (80, 103, 120), [0, 0, 1200, 800], width = 10)
+
         img = font.render(text, True, pygame.Color(colour))
-        pygame.draw.rect(window, (0, 139, 139), (0, 0, window.get_width(), 120))
         window.blit(img, (x, y))
 
-        self.menu_button = Button("Calbri", 60, False, "Menu", True, (50, 50, 50), "white", 15, 30, 132, 60, "white", hoverColour = (10, 10, 10))
-        self.quit_button = Button("Calbri", 60, False, "Quit", True, (50, 50, 50), "white", WIDTH - 135, 30, 112, 60, "red", hoverColour = (10, 10, 10))
+        self.menu_button = Button("Calbri", 60, False, "Menu", True, (112, 137, 156), "white", 15, 30, 132, 60, "white", hoverColour = (80, 103, 120))
+        self.quit_button = Button("Calbri", 60, False, "Quit", True, (112, 137, 156), "white", WIDTH - 135, 30, 112, 60, "red", hoverColour = (80, 103, 120))
         
         self.quit_button.button_hover(pos)
         self.menu_button.button_hover(pos)

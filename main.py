@@ -7,7 +7,7 @@ from computerGame.computerGame import GameComp
 pygame.init() # This just makes all the functions you call work properly by initialsing them
 
 # Variables for window
-WIDTH, HEIGHT = 800, 600 # The width and height that the display will be set to
+WIDTH, HEIGHT = 1200, 800 # The width and height that the display will be set to
 logo = pygame.image.load("logo.png") # Loading the named image file and assigning it to a variable5
 menu_logo = pygame.transform.smoothscale(logo, (768, 768))
 FPS = 60
@@ -26,7 +26,7 @@ class Program:
         self.gameStateManager = GameStateManager("menu") 
 
         # Creating the Menu
-        self.menu = Menu(self.window, self.gameStateManager)
+        self.menu = Menu(self.window, self.gameStateManager, WIDTH, HEIGHT)
         
         self.game_local = GameLocal(self.window, self.gameStateManager)
         

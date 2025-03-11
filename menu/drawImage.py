@@ -2,7 +2,7 @@ import pygame
 
 class Image:
     def __init__(self, file, x, y, size):
-        self.file = pygame.transform.scale(pygame.image.load(file), size)
+        self.file = pygame.Surface.convert_alpha(file)
         self.x = x
         self.y = y
         self.size = size
