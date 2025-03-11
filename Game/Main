@@ -131,7 +131,6 @@ while run == True:
                     position.clear() 
                 elif event.type == pygame.MOUSEBUTTONUP and click == True:
                     click = False
-                pygame.display.update
                 check_winner()
                 turn = 'p2'
             while turn == 'p2':
@@ -161,12 +160,11 @@ while run == True:
                     position.clear() 
                 elif event.type == pygame.MOUSEBUTTONUP and click == True:
                     click = False
-                pygame.display.update
                 check_winner()
                 turn = 'p1'
 
     if end_game == True:
         win_screen(winner)
-        pygame.display.update
+pygame.display.update
 
 pygame.quit()
