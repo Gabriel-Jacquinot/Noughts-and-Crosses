@@ -130,7 +130,7 @@ while run == True:
                         pygame.Surface.blit(screen, cross, (100,300))
                         spaces[1][0] = 1 
                     if mid.collidepoint(position):
-                        screen.blit(screen, cross, (300,300))
+                        pygame.Surface.blit(screen, cross, (300,300))
                         spaces[1][1] = 1 
                     if midright.collidepoint(position):
                         pygame.Surface.blit(screen, cross, (500,300))
@@ -148,8 +148,8 @@ while run == True:
                 elif event.type == pygame.MOUSEBUTTONUP and click == True:
                     click = False
                 check_winner()
-                turn = 'p2'
                 print(spaces)
+                turn = 'p2'
                 break
             while turn == 'p2':
                 if event.type == pygame.MOUSEBUTTONDOWN and click == False:
@@ -158,37 +158,39 @@ while run == True:
                     position.append(x)
                     position.append(y)
                     if topleft.collidepoint(position):
-                        pygame.surface.blit(screen, nought, (100,500))
+                        pygame.Surface.blit(screen, nought, (100,500))
                         spaces[0][0] = -1 
                     if midright.collidepoint(position):
-                        pygame.surface.blit(screen, nought, (300,500))
+                        pygame.Surface.blit(screen, nought, (300,500))
                         spaces[0][1] = -1 
                     if topright.collidepoint(position):
-                        pygame.surface.blit(screen, nought, (500,500))
+                        pygame.Surface.blit(screen, nought, (500,500))
                         spaces[0][2] = -1 
                     if midleft.collidepoint(position):
-                        pygame.surface.blit(screen, nought, (100,300))
+                        pygame.Surface.blit(screen, nought, (100,300))
                         spaces[1][0] = -1 
                     if mid.collidepoint(position):
-                        pygame.surface.blit(screen, nought, (300,300))
+                        pygame.Surface.blit(screen, nought, (300,300))
                         spaces[1][1] = -1 
                     if midright.collidepoint(position):
-                        pygame.surface.blit(screen, nought, (500,300))
+                        pygame.Surface.blit(screen, nought, (500,300))
                         spaces[1][2] = -1 
                     if botleft.collidepoint(position):
-                        pygame.surface.blit(screen, nought, (100,100))
+                        pygame.Surface.blit(screen, nought, (100,100))
                         spaces[2][0] = -1 
                     if botmid.collidepoint(position):
-                        pygame.surface.blit(screen, nought, (300,100))
+                        pygame.Surface.blit(screen, nought, (300,100))
                         spaces[2][1] = -1 
                     if botright.collidepoint(position):
-                        pygame.surface.blit(screen, nought, (500,100))
+                        pygame.Surface.blit(screen, nought, (500,100))
                         spaces[2][2] = -1 
                     position.clear() 
                 elif event.type == pygame.MOUSEBUTTONUP and click == True:
                     click = False
                 check_winner()
+                print(spaces)
                 turn = 'p1'
+                break
 
     if end_game == True:
         win_screen(winner)
