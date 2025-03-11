@@ -149,6 +149,8 @@ while run == True:
                     click = False
                 check_winner()
                 turn = 'p2'
+                print(spaces)
+                break
             while turn == 'p2':
                 if event.type == pygame.MOUSEBUTTONDOWN and click == False:
                     click = True
