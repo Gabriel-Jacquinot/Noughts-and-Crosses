@@ -100,7 +100,7 @@ screen.blit(return_img, (1000, 180))
 while run == True:
     while end_game == False:
         for event in pygame.event.get():
-            if event.type == pygame.quit:
+            if event.type == pygame.QUIT:
                 run = False
                 pygame.quit()
                 sys.exit()
@@ -165,6 +165,7 @@ while run == True:
 
     if end_game == True:
         win_screen(winner)
+
 pygame.display.update
 
 pygame.quit()
