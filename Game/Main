@@ -2,6 +2,7 @@
 #SECOND PLAYER WILL USE NOUGHTS
 
 import pygame
+import sys
 
 pygame.init()
 
@@ -28,11 +29,11 @@ click = False
 winner = 0
 position = []
 spaces = []
-turn = p1      #p1 = first player (crosses)
+turn = 'p1'      #p1 = first player (crosses)
 cross = pygame.image.load('White_Cross.png')
-pygame.Surface.convert_alpha()
+pygame.Surface.convert_alpha(cross)
 nought = pygame.image.load('White_Nought.png')
-pygame.Surface.convert_alpha()
+pygame.Surface.convert_alpha(nought)
 
 #font
 font = pygame.font.SysFont('Verdana', 40)
@@ -43,15 +44,15 @@ for x in range(3):
 
 print(spaces)
 
-topleft = pygame.rect(100,500,200,200)
-topmid = pygame.rect(300,500,200,200)
-topright = pygame.rect(500,500,200,200)
-midleft = pygame.rect(100,300,200,200)
-mid = pygame.rect(300,300,200,200)
-midright = pygame.rect(500,300,200,200)
-botleft = pygame.rect(100,100,200,200)
-botmid = pygame.rect(300,100,200,200)
-botright = pygame.rect(500,100,200,200)
+topleft = pygame.Rect(100,500,200,200)
+topmid = pygame.Rect(300,500,200,200)
+topright = pygame.Rect(500,500,200,200)
+midleft = pygame.Rect(100,300,200,200)
+mid = pygame.Rect(300,300,200,200)
+midright = pygame.Rect(500,300,200,200)
+botleft = pygame.Rect(100,100,200,200)
+botmid = pygame.Rect(300,100,200,200)
+botright = pygame.Rect(500,100,200,200)
 
 def check_winner():
     y_pos = 0
