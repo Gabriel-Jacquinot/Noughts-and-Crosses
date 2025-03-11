@@ -67,6 +67,7 @@ def check_winner():
         if sum(x) == -3:
             winner = '2'
             end_game = True
+
         #ROWS
         if spaces[0][y_pos] + spaces[1][y_pos] + spaces[2][y_pos] == 3:     
             winner = '1'
@@ -75,6 +76,7 @@ def check_winner():
             winner = '2'
             end_game = True
         y_pos += 1
+
     #DIAGONAL
     if spaces[0][0] + spaces[1][1] + spaces[2][2] == 3 or spaces[2][0] + spaces[1][1] + spaces [0][2] == 3:
         winner = '1'
@@ -82,6 +84,7 @@ def check_winner():
     if spaces[0][0] + spaces[1][1] + spaces[2][2] == -3 or spaces[2][0] + spaces[1][1] + spaces [0][2] == -3:
         winner = '2'
         end_game = True
+
         
 def win_screen(winner):
     win_text = 'Player ' +str(winner)+ ' wins!'
@@ -176,12 +179,14 @@ while run == True:
                     turn = 'p2'
                 elif event.type == pygame.MOUSEBUTTONUP and click == True:
                     click = False
-                check_again()
                 if check_again() == True:
                     spaces.clear()
                     for x in range(3):
                         row = [0]*3
                         spaces.append(row)
+                check_winner()
+                if end_game == True:
+                    win_screen(winner)
                 print(spaces)
                 break
             while turn == 'p2':
@@ -230,12 +235,14 @@ while run == True:
                     turn = 'p1'
                 elif event.type == pygame.MOUSEBUTTONUP and click == True:
                     click = False
-                check_again()
                 if check_again() == True:
                     spaces.clear()
                     for x in range(3):
                         row = [0]*3
                         spaces.append(row)
+                check_winner()
+                if end_game == True:
+                    win_screen(winner)
                 break
 
 pygame.quit()
