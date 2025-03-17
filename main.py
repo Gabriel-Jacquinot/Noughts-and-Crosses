@@ -26,9 +26,19 @@ class Program:
         # Creating the Menu
         self.menu = Menu(self.window, self.gameStateManager, WIDTH, HEIGHT)
         
+<<<<<<< HEAD
         # Initialize GameLocal and GameComp
         self.game_local = None
         self.game_comp = None
+=======
+        self.game_local = GameLocal(self.window, self.gameStateManager)
+        
+        self.game_comp = GameComp(self.window, self.gameStateManager)
+        5
+    def run(self):
+        while True: # This is the game loop, so anything that happens here will undergo the 60 frames a second refresh rate. Without the game loop nothing would happen as nothing is updated so the program would just got to pygame.quit() at the end
+            current_state = self.gameStateManager.get_state()
+>>>>>>> origin
 
     def run(self):
         while True:  # Main game loop
