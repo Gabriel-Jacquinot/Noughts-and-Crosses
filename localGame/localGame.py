@@ -11,13 +11,13 @@ class GameLocal:
         pygame.display.set_caption('Noughts & Crosses')
 
         # Initialize game variables
-        self.is_running = True  # Renamed from `run` to `is_running`
+        self.is_running = True # Renamed from `run` to `is_running`
         self.click = False
         self.end_game = False
         self.winner = 0
         self.position = []
         self.spaces = [[0, 0, 0], [0, 0, 0], [0, 0, 0]]
-        self.turn = 'p1'  # p1 = first player (crosses)
+        self.turn = 'p1' # p1 = first player (crosses)
         self.cross = pygame.image.load('White_Cross.png')
         pygame.Surface.convert_alpha(self.cross)
         self.nought = pygame.image.load('White_Nought.png')
@@ -39,11 +39,11 @@ class GameLocal:
         self.botright = pygame.Rect(500, 500, 200, 200)
 
         # Button rectangles
-        self.reset_button = pygame.Rect(800, 480, 350, 160)  # Reset Game button
-        self.menu_button = pygame.Rect(800, 160, 350, 160)   # Return to Menu button
+        self.reset_button = pygame.Rect(800, 480, 350, 160) # Reset Game button
+        self.menu_button = pygame.Rect(800, 160, 350, 160) # Return to Menu button
         self.quit_button = pygame.Rect(920, 370, 112, 60)
 
-    def draw_grid(self):
+    def grid(self):
         bg = (112, 137, 156)
         grid_lines = (255, 255, 255)
         self.screen.fill(bg)
@@ -91,7 +91,7 @@ class GameLocal:
         pygame.draw.rect(self.screen, (80, 103, 120), [200, 200, 400, 400], width=10, border_radius=15)
         self.screen.blit(win_img, (285, 375))
 
-    def draw_buttons(self):
+    def buttons(self):
         # Reset Game button
         pygame.draw.rect(self.screen, (255, 255, 255), self.reset_button, width=10, border_radius=35)
         reset_text = 'Reset Game'
@@ -104,7 +104,7 @@ class GameLocal:
         menu_img = self.font.render(menu_text, True, (255, 255, 255))
         self.screen.blit(menu_img, (self.menu_button.x + 30, self.menu_button.y + 60))
         
-    def draw_hover_buttons(self):
+    def hover_buttons(self):
         pos = pygame.mouse.get_pos()
         quit_button = Button("Calbri", 60, False, "Quit", True, (112, 137, 156), "white", 920, 370, 112, 60, "red", hoverColour = (80, 103, 120))
         quit_button.button_hover(pos)
@@ -115,8 +115,8 @@ class GameLocal:
         self.turn = 'p1'
         self.end_game = False
         self.winner = 0
-        self.draw_grid()
-        self.draw_buttons()
+        self.grid()
+        self.buttons()
 
     def handle_click(self, pos):
         if not self.end_game:
@@ -186,17 +186,17 @@ class GameLocal:
         if self.reset_button.collidepoint(pos):
             self.play_again()
         elif self.menu_button.collidepoint(pos):
-            self.gameStateManager.set_state("menu")  # Return to menu
+            self.gameStateManager.set_state("menu") # Return to menu
             self.is_running = False  # Stop the game loop
         elif self.quit_button.collidepoint(pos): # Checking if this click is on the quit button or not by matching it to mouse coordinates
             pygame.quit()
             exit()
 
     def run(self):
-        self.draw_grid()
-        self.draw_buttons()
+        self.grid()
+        self.buttons()
         while self.is_running:
-            self.draw_hover_buttons()
+            self.hover_buttons()
             for event in pygame.event.get():
                 if event.type == pygame.QUIT:
                     self.is_running = False
