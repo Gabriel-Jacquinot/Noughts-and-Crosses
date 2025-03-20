@@ -30,6 +30,7 @@ def create_menu(window, WIDTH, HEIGHT):
 def draw_text(window, text, font, colour, x, y):
     img = font.render(text, True, pygame.Color(colour))
     window.blit(img, (x, y))
+    pygame.draw.line(window, (255, 255, 255), ((1200 / 2) - (47 * 25 / 2) / 2, (800 // 2) - 217), (890, (800 // 2) - 217), width = 3)
 
 class Menu:
     def __init__(self, window, gameStateManager, WIDTH, HEIGHT):

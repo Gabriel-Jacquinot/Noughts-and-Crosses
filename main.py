@@ -64,7 +64,7 @@ class Program:
             elif current_state == "play_local" and self.game_local is not None:
                 self.game_local.run() # Run the local game
             elif current_state == "play_comp" and self.game_comp is not None:
-                self.game_comp.run(self.window, WIDTH, HEIGHT) # Run the computer game
+                self.game_comp.run() # Run the computer game
 
             pygame.display.update() # Update the display
             self.clock.tick(FPS)
